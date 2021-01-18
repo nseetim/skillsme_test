@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills me Beta-Flight test app-Registration</title>
+</head>
+<body>
+<h1>
+    Register for an account Here<p>Have an account? <br>Then<a href="{% url 'skills_me_beta:login'%}"> login</a></p>
+    {% if error_msg %}
+        <p>
+        <strong>
+            {{ error_msg }}
+        </strong>
+        </p>
+    {% endif %}
+    <form enctype="multipart/form-data" class="form-horizontal" role="form" action="{% url 'skills_me_beta:signup' %}" method="post">
+        {% csrf_token %}
+        {% for field in signup_form%}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <span class="text-danger small">{{ field.errors }}</span>
+                </div>
+                <label class="control-label col-sm-2" for="">{{ field.label_tag }}</label>
+                <div class="col-sm-10">{{ field }}</div>
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</h1>
+</body>
+</html>

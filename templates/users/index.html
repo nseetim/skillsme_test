@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills me Beta-Test</title>
+</head>
+<body>
+<h1>
+    Welcome to Our site!!!
+</h1>
+<h3>
+    You can view currently available flights by using the button below, also search for flights based on<br>
+    date, departure and destination by using our search bar
+</h3>
+<a href="{% url 'skills_me_beta:signup' %}">Register Here</a><br>
+<a href="{% url 'skills_me_beta:login' %}">Login Here</a><br>
+<a href="{% url 'skills_me_beta:logout' %}">Logout</a> <br>
+<a href="{% url 'skills_me_beta:password_reset_request' %}">Forgot Password?</a><br>
+<a href="{% url 'skills_me_beta:current_flights' %}">View Current Flights</a>
+</body>
+</html>
